@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import awsRoutes from './src/routes/awsRoutes';
 
 const app = express();
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 
 // bodyparser setup: setting up json to work
 app.use(bodyParser.json());
