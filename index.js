@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import awsRoutes from './src/routes/awsRoutes';
 
 const app = express();
 const PORT = 8081;
@@ -9,6 +10,8 @@ const PORT = 8081;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
+
+awsRoutes(app);
 
 // serving static files
 app.use(express.static('public'));
